@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KDramaZone</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+    }
+    header {
+      background-color: #9c27b0;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.8rem;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+    }
+    .video-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 1rem;
+    }
+    video {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .download {
+      margin-top: 0.5rem;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background-color: #2196f3;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .download:hover {
+      background-color: #1976d2;
+    }
+    .ad-container {
+      margin: 2rem auto;
+      text-align: center;
+    }
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>KDramaZone - Watch and Download Your Favorite Dramas</header>
+
+  <div class="ad-container" id="top-ad"></div>
+
+  <div class="container">
+    <div class="video-card">
+      <h3>Crash Landing on You - Episode 1</h3>
+      <video controls poster="thumbnails/crash-landing-thumb.jpg">
+        <source src="videos/crash-landing-ep1.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <a href="videos/crash-landing-ep1.mp4" download class="download">Download Episode</a>
+    </div>
+    <div class="video-card">
+      <h3>Goblin - Episode 1</h3>
+      <video controls poster="thumbnails/goblin-thumb.jpg">
+        <source src="videos/goblin-ep1.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <a href="videos/goblin-ep1.mp4" download class="download">Download Episode</a>
+    </div>
+  </div>
+
+  <div class="ad-container" id="bottom-ad"></div>
+
+  <footer>&copy; 2025 KDramaZone. Ads support this site. All rights reserved.</footer>
+
+  <script>
+    (function loadAds() {
+      var adKey = 'YOUR_ADSTERRA_KEY_HERE';
+      var topAd = document.getElementById('top-ad');
+      var bottomAd = document.getElementById('bottom-ad');
+
+      var adScriptTop = document.createElement('script');
+      adScriptTop.src = 'https://www.profitabledisplaynetwork.com/' + adKey + '/invoke.js';
+      adScriptTop.async = true;
+      topAd.appendChild(adScriptTop);
+
+      var adScriptBottom = document.createElement('script');
+      adScriptBottom.src = 'https://www.profitabledisplaynetwork.com/' + adKey + '/invoke.js';
+      adScriptBottom.async = true;
+      bottomAd.appendChild(adScriptBottom);
+    })();
+  </script>
+</body>
+</html>
