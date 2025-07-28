@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rohz.Drama</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000;
+    padding: 1rem;
+  }
+  .logo {
+    font-size: 2rem;
+    color: #FFD700;
+    font-weight: bold;
+  }
+  .search-box input {
+    padding: 0.4rem;
+    border-radius: 4px;
+    border: none;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    background-color: #1e1e1e;
+    padding: 0.5rem;
+  }
+  nav button {
+    background: none;
+    border: none;
+    padding: 0.8rem;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #FFD700;
+    font-weight: bold;
+  }
+  nav button:hover {
+    background-color: #333;
+  }
+  .sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: #1e1e1e;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 2rem;
+  }
+  .sidebar a {
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+    color: #FFD700;
+    display: block;
+    font-weight: bold;
+  }
+  .sidebar a:hover {
+    background-color: #333;
+  }
+  .menu-icon {
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+  .container {
+    padding: 1rem;
+  }
+  .section-title {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    border-bottom: 2px solid #FFD700;
+    display: inline-block;
+  }
+  .featured-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+  }
+  .featured-slider img {
+    width: 300px;
+    border-radius: 8px;
+  }
+  footer {
+    background: #000;
+    text-align: center;
+    padding: 1rem;
+    color: #777;
+    margin-top: 2rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="menu-icon" onclick="toggleSidebar()">&#9776;</span>
+  <div class="logo">Rohz.Drama</div>
+  <div class="search-box">
+    <input type="text" placeholder="Search...">
+  </div>
+</header>
+
+<div id="mySidebar" class="sidebar">
+  <a href="#">Home</a>
+  <a href="#">Popular Stars</a>
+  <a href="#">Movies</a>
+  <a href="#">Hindi Dubbed</a>
+  <a href="#">Award Show</a>
+  <a href="#">About</a>
+  <a href="#">Contact</a>
+  <a href="#">Request Drama</a>
+</div>
+
+<nav>
+  <button onclick="showSection('featured')">Featured</button>
+  <button onclick="showSection('latest-movies')">Latest Movies</button>
+  <button onclick="showSection('latest-tv')">Latest TV & Show</button>
+</nav>
+
+<div class="container">
+  <div id="featured" class="section">
+    <div class="section-title">Featured</div>
+    <div class="featured-slider">
+      <img src="thumbnails/featured1.jpg" alt="Featured 1">
+      <img src="thumbnails/featured2.jpg" alt="Featured 2">
+      <img src="thumbnails/featured3.jpg" alt="Featured 3">
+    </div>
+  </div>
+
+  <div id="latest-movies" class="section" style="display:none;">
+    <div class="section-title">Latest Movies</div>
+    <p>Movie list here...</p>
+  </div>
+
+  <div id="latest-tv" class="section" style="display:none;">
+    <div class="section-title">Latest TV & Show</div>
+    <p>TV & Show list here...</p>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 Rohz.Drama. All rights reserved.
+</footer>
+
+<script>
+  function toggleSidebar() {
+    var sidebar = document.getElementById("mySidebar");
+    if (sidebar.style.width === "200px") {
+      sidebar.style.width = "0";
+    } else {
+      sidebar.style.width = "200px";
+    }
+  }
+  function showSection(sectionId) {
+    document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
+    document.getElementById(sectionId).style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
